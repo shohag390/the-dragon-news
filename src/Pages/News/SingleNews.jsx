@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CiBookmark } from 'react-icons/ci';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { IoMdShare } from 'react-icons/io';
+import { Link } from 'react-router';
 
 const SingleNews = ({ item }) => {
 
@@ -25,15 +26,19 @@ const SingleNews = ({ item }) => {
                 </div>
             </div>
 
-            <div className='px-[20px]'>
+            <div className='px-[20px] w-full'>
                 <h2 className='text-[20px] font-bold py-[14px]'>{item?.title}</h2>
                 <img className='w-full rounded-md' src={item?.thumbnail_url} alt="" />
                 <p className='text-justify line-clamp-4 pt-[30px]'>{item?.details}</p>
+                <Link className='text-[#ff9900] font-bold' to={`/news/${item?.id}`}>Read More</Link>
+                <div className='h-[1px] w-full bg-[#e1e1e1] mt-[20px]'>
+
+                </div>
             </div>
 
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between px-[20px] pb-[20px] pt-[20px] border-b-[]'>
                 <div className='flex items-center gap-[8px]'>
-                    <FaStar />
+                    <FaStar className='text-[#ff9900]' />
                     <p>{item?.rating?.number}</p>
                 </div>
                 <div className='flex items-center gap-[8px]'>
